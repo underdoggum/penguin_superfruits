@@ -1,0 +1,24 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<div>
+  <form action="/fruits" method="post">
+    <!-- fieldset groups together inputs -->
+    <fieldset>
+      <legend>Create a new fruit</legend>
+      <!-- label tags are good for accessibility with screen readers -->
+      <label>
+        Name: <input type="text" name="name" placeholder="Enter fruit name">
+      </label>
+      <label>
+        Color: <input type="text" name="color" placeholder="Enter color">
+      </label>
+      <label>
+        Ready to eat: <input type="checkbox" name="readyToEat">
+      </label>
+    </fieldset>
+    <input type="submit" value="Create!">
+  </form>
+</div>
+
+{% endblock %}

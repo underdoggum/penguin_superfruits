@@ -1,0 +1,28 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<div>
+  <form action="/fruits/{{ fruit._id }}?_method=PUT" method="post">
+    <!-- fieldset groups together inputs -->
+    <fieldset>
+      <legend>Edit {{ fruit.name }}</legend>
+      <!-- label tags are good for accessibility with screen readers -->
+      <label>
+        Name: <input type="text" name="name" value="{{ fruit.name }}">
+      </label>
+      <label>
+        Color: <input type="text" name="color" value="{{ fruit.color }}">
+      </label>
+      <label>
+        Ready to eat: <input type="checkbox" name="readyToEat"
+        {% if fruit.readyToEat == true %}
+          checked
+        {% endif %}
+        >
+      </label>
+    </fieldset>
+    <input type="submit" value="Update {{ fruit.name }}">
+  </form>
+</div>
+
+{% endblock %}
